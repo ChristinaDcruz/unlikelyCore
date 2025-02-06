@@ -1,49 +1,72 @@
-let cart = [];
-
-// Function to add items to the cart
-function addToCart(item, price) {
-    cart.push({ item, price });
-    alert(`${item} has been added to your cart!`);
-    displayCart();
-}
-
-// Function to display cart items
-function displayCart() {
-    const cartItemsDiv = document.getElementById('cart-items');
-    const cartTotalDiv = document.getElementById('cart-total');
-    
-    // Clear previous cart items
-    cartItemsDiv.innerHTML = '';
-    
-    if (cart.length === 0) {
-        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
-        cartTotalDiv.innerHTML = '';
-        return;
+// Sticky Nav
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.sticky-nav');
+    if (window.scrollY > 0) {
+        nav.classList.add('sticky');
+    } else {
+        nav.classList.remove('sticky');
     }
+});
 
-    let total = 0;
-    cart.forEach((cartItem) => {
-        total += cartItem.price;
-        cartItemsDiv.innerHTML += `<p>${cartItem.item} - $${cartItem.price}</p>`;
+// Search Functionality (Basic Example)
+const searchInput = document.getElementById('search');
+const searchButton = document.querySelector('.search-container button');
+
+searchButton.addEventListener('click', () => {
+    const searchTerm = searchInput.value;
+    // Perform search logic here (e.g., redirect to search results page)
+    console.log('Searching for:', searchTerm);
+});
+
+
+// ... (previous JavaScript) ...
+
+// Custom Cursor
+const customCursor = document.createElement('div');
+customCursor.classList.add('custom-cursor');
+document.body.appendChild(customCursor);
+
+document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+    customCursor.classList.add('active'); // Show the cursor
+
+    // Add animation class (optional)
+    customCursor.classList.add('animate'); // Add animation
+
+    // Remove animation class after a delay (optional)
+    setTimeout(() => {
+        customCursor.classList.remove('animate');
+    }, 500); // Adjust delay as needed
+});
+
+// Hide the default cursor
+document.body.style.cursor = 'none';
+
+// Hide custom cursor on mouse leave (using CSS for better performance)
+
+// ... (previous JavaScript) ...
+
+// Custom Cursor Hover Effect
+const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .main-nav li a, .hero button'); // Select all interactive elements
+
+interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        customCursor.classList.add('hover');
     });
 
-    cartTotalDiv.innerHTML = `<h3>Total: $${total}</h3>`;
-}
+    element.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('hover');
+    });
+});
 
-// Function to clear the cart
-function clearCart() {
-    cart = [];
-    displayCart();
-}
+// ... (previous JavaScript) ...
 
-// Check if on cart page and display cart items
-if (window.location.pathname.endsWith('cart.html')) {
-    displayCart();
-}
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-nav');
 
-// Contact form submission handling
-document.getElementById('contact-form')?.addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    this.reset();
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
 });
