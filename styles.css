@@ -22,11 +22,12 @@ header {
     position: relative;
 }
 
-.logo h1 {
-    font-family: 'Bugaki', sans-serif;
-    font-size: 24px;
-    margin: 0;
-    color: #ffe6a7;
+.logo {
+    cursor: pointer;
+}
+
+.logo img {
+    height: 40px;
 }
 
 .nav-menu {
