@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchIcon = document.getElementById('search-icon');
     const searchBar = document.getElementById('search-bar');
+    const logo = document.getElementById('logo');
 
     searchIcon.addEventListener('click', function() {
         searchBar.style.display = searchBar.style.display === 'flex' ? 'none' : 'flex';
@@ -11,6 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!searchIcon.contains(event.target) && !searchBar.contains(event.target)) {
             searchBar.style.display = 'none';
         }
+    });
+
+    // Redirect to home page (hero section) when logo is clicked
+    logo.addEventListener('click', function() {
+        document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
     });
 
     // Example function to update cart count
