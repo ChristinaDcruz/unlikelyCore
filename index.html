@@ -8,11 +8,20 @@
 </head>
 <body>
     <header>
-        <div class="logo" id="logo">
-            <img src="images/icon.png" alt="Unlikely Core Logo">
+        <a href="#home" class="logo-link">
+            <div class="logo-container">
+                <img src="images/logo.png" alt="Unlikely Core Logo" class="logo-img">
+                <h1 class="company-name">Unlikely Core</h1>
+            </div>
+        </a>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
-        <nav>
-            <ul class="nav-menu">
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#valentine">Valentine's Day</a></li>
                 <li><a href="#new-in">New In</a></li>
                 <li><a href="#earrings">Earrings</a></li>
@@ -41,9 +50,15 @@
     </header>
 
     <section class="hero" id="home">
-        <h2>Everyday Jewellery</h2>
-        <p>18K Gold Plated | Waterproof | Anti Tarnish | Hypoallergenic</p>
-        <button class="cta-button">Shop the Gift Guide</button>
+        <div class="hero-image-container">
+            <img src="images/desktop-hero-image.jpg" alt="Hero Image" class="hero-image desktop-image">
+            <img src="images/mobile-hero-image.jpg" alt="Hero Image" class="hero-image mobile-image">
+            <div class="hero-text">
+                <h2>Welcome to Unlikely Core</h2>
+                <p>Find Jewellery like any other!</p>
+                <button class="cta-button">Best Sellers</button>
+            </div>
+        </div>
     </section>
 
     <script src="script.js"></script>
