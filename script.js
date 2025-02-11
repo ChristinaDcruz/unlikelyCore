@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchIcon = document.getElementById('search-icon');
     const searchBar = document.getElementById('search-bar');
-    const logo = document.getElementById('logo');
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
 
     searchIcon.addEventListener('click', function() {
         searchBar.style.display = searchBar.style.display === 'flex' ? 'none' : 'flex';
@@ -14,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Redirect to home page (hero section) when logo is clicked
-    logo.addEventListener('click', function() {
-        document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+    // Toggle the navigation menu on hamburger menu click
+    hamburgerMenu.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
     });
 
     // Example function to update cart count
